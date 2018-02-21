@@ -8,6 +8,13 @@
     </get>
 
     <var name="Number" value="javascript: $Orders.orders[0].number"/>
-    <output value="$Number" />
+
+    <context if='$Orders.orders[0].shipment_state == "shipped"'>
+      <output value="Seu pedido já foi enviado e tem o código $Number" />
+    </context>
+
+    <context if='$Orders.orders[0].shipment_state == "delivered"'>
+      <output value="Seu pedido já foi entregue $Number" />
+    </context>
   </input>
 </context>
