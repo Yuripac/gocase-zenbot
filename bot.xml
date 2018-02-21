@@ -1,0 +1,13 @@
+<context>
+  <input id="purchase" pattern="* how * buy *">
+    <get url="http://api.gocase.com.br/api/v1/zendesk/orders" var="Orders">
+      <param name="token" value="4083f9bf5ce8da0c1577b145f60f133e5b78e1c71ee6bfd8"/>
+      <param name="q[email_eq]" value="raquelgoncalvessousa2016@hotmail.com"/>
+      <param name="q[state_in]" value="complete"/>
+      <param name="q[s]" value="completed_at+desc"/>
+    </get>
+
+    <var name="Number" value="javascript: $Orders.orders[0].number"/>
+    <output value="$Number" />
+  </input>
+</context>
