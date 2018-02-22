@@ -1,7 +1,7 @@
 <context>
   <input id="purchase" pattern="* blablableble *">
     
-      <output value="Olá $req_user_name" />
+      <output value="Olá $req_user_email" />
     
 
   </input>
