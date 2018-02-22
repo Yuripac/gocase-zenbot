@@ -1,21 +1,17 @@
 <context>
-  <input id="purchase" pattern="* how * buy *">
-    <get url="http://api.gocase.com.br/api/v1/zendesk/orders" var="Orders">
-      <param name="token" value="4083f9bf5ce8da0c1577b145f60f133e5b78e1c71ee6bfd8"/>
-      <param name="q[email_eq]" value="carlanascimentol@outlook.com"/>
-      <param name="q[state_in]" value="complete"/>
-      <param name="q[s]" value="completed_at+desc"/>
+  <input id="purchase" pattern="* blablableble *">
+    <get url="http://factory.gocase.com.br/api/v1/zenbot/order_details" var="Data">
+      <param name="email" value="carol@carolservulo.com"/>
     </get>
 
-    <var name="Number" value="javascript: $Orders.orders[0].number"/>
-    <var name="OrderState" value="javascript: $Orders.orders[0].shipment_state"/>
+    <var name="Number" value="javascript: $Data.order.number"/>
+    <var name="OrderState" value="javascript: $Data.order.state"/>
+    <var name="OrderInProduction" value="javascript: $Data.order.in_production"/>
+    <var name="OrderPostingIsLate" value="javascript: $Data.order.posting_is_late"/>
 
-    <context if='$OrderState == "shipped"'>
-      <output value="Seu pedido já foi enviado e tem o código $Number" />
+    <context if='$OrderInProduction and !$OrderPostingIsLate'>
+      <output value="Seu pedido ainda está em produção, em breve enviaremos o código de rastreio para você" />
     </context>
 
-    <context if='$OrderState == "delivered"'>
-      <output value="Seu pedido já foi entregue $Number" />
-    </context>
   </input>
 </context>
