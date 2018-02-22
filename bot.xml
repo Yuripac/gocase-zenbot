@@ -1,8 +1,7 @@
 <context>
   <input id="purchase" pattern="* blablableble *">
-
     
-    <output value="Seu pedido ainda está em produção, em breve enviaremos o código de rastreio para você" />
+      <output value="Olá $req_user_name" />
     
 
   </input>
