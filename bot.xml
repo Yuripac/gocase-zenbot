@@ -1,8 +1,17 @@
 <context>
   <input id="purchase" pattern="* blablableble *">
-    
-      <output value="Olá $req_user_email" />
-    
+    <get url="http://factory.gocase.com.br/api/v1/zenbot/order_details" var="Data">
+      <param name="email" value="leylaine13@gmail.com"/>
+    </get>
+
+    <var name="Number" value="javascript: $Data.order.number"/>
+    <var name="OrderState" value="javascript: $Data.order.state"/>
+    <var name="OrderInProduction" value="javascript: $Data.order.in_production"/>
+    <var name="OrderPostingIsLate" value="javascript: $Data.order.posting_is_late"/>
+
+    <context if='$OrderInProduction and !$OrderPostingIsLate'>
+      <output value="Seu pedido ainda está em produção, em breve enviaremos o código de rastreio para você" />
+    </context>
 
   </input>
 </context>
