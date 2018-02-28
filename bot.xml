@@ -1,4 +1,5 @@
 <context>
-  <input id="purchase" pattern="* blablableble *">    
+  <input id="purchase" pattern="* blablableble *">
+    <output/>
   </input>
 </context>
