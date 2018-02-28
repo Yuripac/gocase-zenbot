@@ -8,9 +8,9 @@
     <var name="OrderInProduction" value="javascript: $Data.order.in_production"/>
     <var name="OrderPostingIsLate" value="javascript: $Data.order.posting_is_late"/>
 
-    
+    <context if="2 == 2">
       <output value="Mensagem do bot"/>
-    
+    </context>
 
   </input>
 </context>
