@@ -9,7 +9,6 @@
     <var name="OrderPostingIsLate" value="javascript: $Data.order.posting_is_late"/>
 
     <context if='$OrderInProduction and !$OrderPostingIsLate'>
-      <output value="Seu pedido ainda está em produção, em breve enviaremos o código de rastreio para você" />
       <output>
         <![CDATA[
         <p>Oi $req_user_name, tudo bem? 😃</p>
