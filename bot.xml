@@ -1,15 +1,18 @@
 <context>
-  <get url="http://factory.gocase.com.br/api/v1/zenbot/order_details" var="Data">
-    <param name="email" value="mineirinhajqc@hotmail.com"/>
-  </get>
+  <input id="purchase" pattern="* blablableble *">
+    <get url="http://factory.gocase.com.br/api/v1/zenbot/order_details" var="Data">
+      <param name="email" value="mineirinhajqc@hotmail.com"/>
+    </get>
 
-  <var name="OrderNumber" value="javascript: $Data.order.number"/>
-  <var name="OrderInProduction" value="javascript: $Data.order.in_production"/>
-  <var name="OrderPostingIsLate" value="javascript: $Data.order.posting_is_late"/>
+    <var name="OrderNumber" value="javascript: $Data.order.number"/>
+    <var name="OrderInProduction" value="javascript: $Data.order.in_production"/>
+    <var name="OrderPostingIsLate" value="javascript: $Data.order.posting_is_late"/>
 
-  <context if="!!$OrderInProduction and !$OrderPostingIsLate">
-    <input id="purchase" pattern="* blablableble *">
-      <output value="Mensagem do bot"/>
-    </input>
-  </context>  
+    <context if="!!$OrderInProduction and !$OrderPostingIsLate">
+      <input pattern="* blablableble *">
+        <output value="Mensagem do bot"/>
+      </input>
+    </context>
+
+  </input>
 </context>
