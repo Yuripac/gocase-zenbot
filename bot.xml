@@ -8,7 +8,7 @@
     <var name="OrderInProduction" value="javascript: $Data.order.in_production"/>
     <var name="OrderPostingIsLate" value="javascript: $Data.order.posting_is_late"/>
 
-    
+    <context if='$OrderPostingIsLate'>
       <output>
         <![CDATA[
         <p>Oi $req_user_name, tudo bem? 😃</p>
@@ -22,7 +22,7 @@
         <p>Agradecemos o seu contato e se tiver qualquer outra dúvida basta responder esse e-mail que nossa equipe vai te ajudar! 💓</p>
         ]]>
       </output>
-    
+    </context>
 
   </input>
 </context>
