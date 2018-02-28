@@ -8,7 +8,7 @@
     <var name="OrderInProduction" value="javascript: $Data.order.in_production"/>
     <var name="OrderPostingIsLate" value="javascript: $Data.order.posting_is_late"/>
 
-    <context if="$OrderPostingIsLate == true">
+    <context if="!!$OrderPostingIsLate">
       <output value="Mensagem do bot"/>
     </context>
 
