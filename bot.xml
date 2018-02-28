@@ -1,9 +1,9 @@
 <context>
   <input id="purchase" pattern="* blablableble *">
 
-    <context if='$OrderInProduction and !$OrderPostingIsLate'>
+    
       <output value="Mensagem do bot"/>
-    </context>
+    
 
   </input>
 </context>
