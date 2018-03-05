@@ -1,5 +1,6 @@
 <context>
-  <input id="purchase" pattern="repeat($Number)">
-    <output value="$Number"/>
+  <input id="purchase" pattern="* blablableble *">
+    <var name="OrderNumber" value="javascript: $req_text.match(/\d{13}/) ? $req_text.match(/\d{13}/)[0] : null"/>    
+    <output value="$OrderNumber"/>    
   </input>
 </context>
