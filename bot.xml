@@ -1,5 +1,5 @@
 <context>
-  <input id="purchase" pattern="* { blablableble * $Text } *">
-    <output value="$Text"/>
+  <input id="purchase" pattern="repeat($Number)">
+    <output value="$Number"/>
   </input>
 </context>
