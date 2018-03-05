@@ -9,8 +9,8 @@
       </context>
     </get>
     
-    <context if="!empty($RequestedOrder)">
-      <output value="Reference is empty"/>
+    <context if="full($RequestedOrder)">
+      <output value="Reference is not empty"/>
     </context>
     
   </input>
