@@ -5,7 +5,7 @@
     <get url="http://factory.gocase.com.br/api/v1/zenbot/order_details" var="Data">
       <param name="email" value="nexiste@gocase.com.br"/>
       <context if="!empty($RequestedOrder)">
-        <param name="reference" value="$RequestedOrder">
+        <param name="reference" value="$RequestedOrder"/>
       </context>
     </get>
     
